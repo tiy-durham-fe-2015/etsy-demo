@@ -9,6 +9,15 @@
 
     </div>
 
+    <script type="text/html" id="etsyProfile">
+      <h1>Profile for <%- m.first_name %> <%- m.last_name %></h1>
+      <img src="<%- m.image_url_75x75 %>" alt="profile pic">
+      <p>
+        <%- m.city %>
+        <%- m.bio %>
+      </p>
+    </script>
+
     <script type="text/html" id="etsyList">
       <ul>
         <% m.items.forEach(function (item) { %>
@@ -19,7 +28,7 @@
           </a>
           <span class="item-price"><%- item.price %></span>
           <span class="item-desc"><%- item.description %></span>
-          <button data-userid="<%- item.user_id %>" class="about-user">About User</button>
+          <a href="#profiles/<%- item.user_id %>" class="about-user">View Profile</a>
         </li>
         <% }) %>
       </ul>
@@ -32,6 +41,7 @@
     <script src="js/app.js"></script>
     <script src="js/not-found.js"></script>
     <script src="js/listings-page.js"></script>
+    <script src="js/profile-page.js"></script>
     <script src="js/etsy-api.js"></script>
     <script src="js/init.js"></script>
 
