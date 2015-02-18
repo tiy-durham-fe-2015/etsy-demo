@@ -1,8 +1,7 @@
 app.router.add('', function () {
-  var api = app.EtsyApi({ apiKey: 'jgeqmbakgybo48lww24232km' });
   var listTemplate = _.template($('#etsyList').html(), { variable: 'm' });
 
-  api.listings()
+  app.etsy.listings()
     .done(function (data) {
       // Let's put the data in the console so we can
       // explore it...
